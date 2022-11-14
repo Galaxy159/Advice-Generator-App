@@ -5,7 +5,9 @@ import Generator from "./components/Generator";
 function App() {
   return (
     <>
-      <Generator />
+      <div className="container">
+        <Generator />
+      </div>
       <Footer />
     </>
   );

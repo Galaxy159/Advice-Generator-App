@@ -8,7 +8,7 @@ $color-blue-dark: #1f2632;
 // Media
 @mixin respond($breakpoint) {
   @if $breakpoint == desktop {
-    @media (min-width: 480px) {
+    @media (min-width: 540px) {
       @content;
     }
   }
@@ -30,4 +30,11 @@ html {
 body {
   font-family: "Manrope", sans-serif;
   background-color: $color-blue-dark;
+}
+.container {
+  margin: 12rem auto;
+
+  @include respond(desktop) {
+    margin: 22.3rem auto;
+  }
 }
