@@ -1,0 +1,33 @@
+// Colors
+$color-primary-cyan: #cee3e9;
+$color-primary-green: #52ffa8;
+$color-grayish-blue: #4e5d73;
+$color-grayish-blue-dark: #323a49;
+$color-blue-dark: #1f2632;
+
+// Media
+@mixin respond($breakpoint) {
+  @if $breakpoint == desktop {
+    @media (min-width: 480px) {
+      @content;
+    }
+  }
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: $color-blue-dark;
+}
