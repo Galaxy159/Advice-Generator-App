@@ -78,6 +78,9 @@ body {
     margin-bottom: 4rem;
   }
 }
+.generator__divider {
+  margin-bottom: 0.5rem;
+}
 .generator__dice {
   height: 6.4rem;
   width: 6.4rem;
