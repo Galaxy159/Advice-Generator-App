@@ -4,27 +4,36 @@ import dividerMobile from "../images/pattern-divider-mobile.svg";
 import { ReactComponent as IconDice } from "../images/icon-dice.svg";
 
 export default function Generator() {
-  const [data, setData] = useState();
+  const [advice, setAdvice] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  function handleDiceClick() {
+    setIsLoading(true);
+  }
 
   useEffect(() => {
-    if (data) {
+    if (isLoading) {
       fetch("https://api.adviceslip.com/advice")
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
-          setData(data);
+          setAdvice(data);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.log(error))
+        .finally(() => setIsLoading(false));
     }
-  }, [data]);
+  }, [isLoading]);
 
   return (
     <>
       <main className="generator">
-        <h1 className="generator__headline">Advice #117</h1>
+        <h1 className="generator__headline">
+          Advice #{advice ? advice.slip.id : "117"}
+        </h1>
         <p className="generator__text">
-          “It is easy to sit up and take notice, what's difficult is getting up
-          and taking action.”
+          {advice
+            ? advice.slip.advice
+            : `It is easy to sit up and take notice, what's difficult is getting up
+  and taking action.`}
         </p>
         <picture>
           <source media="(min-width: 540px)" srcSet={dividerDesktop} />
@@ -34,7 +43,7 @@ export default function Generator() {
             className="generator__divider"
           />
         </picture>
-        <div className="generator__dice">
+        <div className="generator__dice" onClick={handleDiceClick}>
           <IconDice className="generator__dice--img" />
         </div>
       </main>
