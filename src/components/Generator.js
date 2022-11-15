@@ -31,9 +31,9 @@ export default function Generator() {
         </h1>
         <p className="generator__text">
           {advice
-            ? advice.slip.advice
-            : `It is easy to sit up and take notice, what's difficult is getting up
-  and taking action.`}
+            ? `"${advice.slip.advice}"`
+            : `"It is easy to sit up and take notice, what's difficult is getting up
+  and taking action."`}
         </p>
         <picture>
           <source media="(min-width: 540px)" srcSet={dividerDesktop} />
