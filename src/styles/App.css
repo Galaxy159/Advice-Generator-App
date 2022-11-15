@@ -18,6 +18,7 @@ body {
 
 .container {
   margin: 12rem auto;
+  position: relative;
 }
 @media (min-width: 540px) {
   .container {
@@ -36,6 +37,8 @@ body {
   display: grid;
   grid-template-rows: repeat(3, -webkit-min-content) 1fr;
   grid-template-rows: repeat(3, min-content) 1fr;
+  grid-template-columns: -webkit-min-content;
+  grid-template-columns: min-content;
   justify-items: center;
 }
 @media (min-width: 540px) {
@@ -99,4 +102,96 @@ body {
 
 .attribution a {
   color: hsl(228deg, 45%, 44%);
+}
+
+.spinner {
+  -webkit-animation: rotator 1.4s linear infinite;
+          animation: rotator 1.4s linear infinite;
+}
+
+@-webkit-keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+.path {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+          animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@-webkit-keyframes colors {
+  0% {
+    stroke: #52ffa8;
+  }
+  25% {
+    stroke: #52ffa8;
+  }
+  50% {
+    stroke: #52ffa8;
+  }
+  75% {
+    stroke: #52ffa8;
+  }
+  100% {
+    stroke: #52ffa8;
+  }
+}
+
+@keyframes colors {
+  0% {
+    stroke: #52ffa8;
+  }
+  25% {
+    stroke: #52ffa8;
+  }
+  50% {
+    stroke: #52ffa8;
+  }
+  75% {
+    stroke: #52ffa8;
+  }
+  100% {
+    stroke: #52ffa8;
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    transform: rotate(450deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    transform: rotate(450deg);
+  }
 }/*# sourceMappingURL=App.css.map */

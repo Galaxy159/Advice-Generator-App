@@ -33,6 +33,7 @@ body {
 }
 .container {
   margin: 12rem auto;
+  position: relative;
 
   @include respond(desktop) {
     margin: 22.3rem auto;
