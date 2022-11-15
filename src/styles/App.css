@@ -54,6 +54,7 @@ body {
   letter-spacing: 3.45714px;
   color: #52ffa8;
   margin-bottom: 2.4rem;
+  text-transform: uppercase;
 }
 @media (min-width: 540px) {
   .generator__headline {

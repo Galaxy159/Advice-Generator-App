@@ -22,6 +22,7 @@
     letter-spacing: 3.45714px;
     color: $color-primary-green;
     margin-bottom: 2.4rem;
+    text-transform: uppercase;
     @include respond(desktop) {
       font-size: 1.3rem;
       line-height: 1.8rem;
