@@ -5,7 +5,7 @@ import { ReactComponent as IconDice } from "../images/icon-dice.svg";
 import Loader from "./Loader.js";
 
 export default function Generator() {
-  const [joke, setJoke] = useState();
+  const [advice, setAdvice] = useState();
   const [isLoading, setIsLoading] = useState(false);
   function handleDiceClick() {
     setIsLoading(true);
@@ -13,13 +13,11 @@ export default function Generator() {
 
   useEffect(() => {
     if (isLoading) {
-      fetch(
-        "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single"
-      )
+      fetch("https://api.adviceslip.com/advice", { cache: "no-cache" })
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
-          setJoke(data);
+          setAdvice(data);
         })
         .catch((error) => console.log(error))
         .finally(() => setIsLoading(false));
@@ -30,15 +28,15 @@ export default function Generator() {
     <>
       <main className="generator">
         <h1 className="generator__headline">
-          {joke ? `Joke #${joke.id}` : "Advice #117"}
+          {advice ? `advice #${advice.slip.id}` : "Advice #117"}
         </h1>
         {isLoading ? (
           <Loader />
         ) : (
           <p className="generator__text">
             <q>
-              {joke
-                ? `${joke.joke}`
+              {advice
+                ? `${advice.slip.advice}`
                 : `It is easy to sit up and take notice, what's difficult is getting up
               and taking action.`}
             </q>
