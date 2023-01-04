@@ -12,11 +12,11 @@ export default function Footer() {
         </a>
         . Coded by{" "}
         <a
-          href="https://www.braunguitar.net"
+          href="https://www.frontendmentor.io/profile/Galaxy159"
           target="_blank"
           rel="noreferrer noopener"
         >
-          שיעורי גיטרה ברחובות
+          Galaxy159
         </a>
         .
       </footer>
